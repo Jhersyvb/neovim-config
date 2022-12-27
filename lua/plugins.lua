@@ -12,7 +12,11 @@ packer.startup(function(use)
     'svrana/neosolarized.nvim',
     requires = { 'tjdevries/colorbuddy.nvim' }
   }
-  use 'nvim-lualine/lualine.nvim' -- Statusline
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
+  use "b0o/incline.nvim"
   use 'nvim-lua/plenary.nvim' -- Common utilities
   use 'onsails/lspkind-nvim' -- vscode-like pictograms
   use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
@@ -54,9 +58,12 @@ packer.startup(function(use)
   use 'JoosepAlviste/nvim-ts-context-commentstring'
 
   use 'folke/tokyonight.nvim'
+  use "EdenEast/nightfox.nvim" -- Packer
+  use "rebelot/kanagawa.nvim"
 
   use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
 
   use 'mg979/vim-visual-multi'
   use 'voldikss/vim-floaterm'
+  use 'iloginow/vim-stylus'
 end)

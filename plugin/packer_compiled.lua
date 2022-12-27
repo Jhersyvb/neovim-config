@@ -109,10 +109,20 @@ _G.packer_plugins = {
     path = "/home/jhersy/.local/share/nvim/site/pack/packer/start/diffview.nvim",
     url = "https://github.com/sindrets/diffview.nvim"
   },
+  ["git.nvim"] = {
+    loaded = true,
+    path = "/home/jhersy/.local/share/nvim/site/pack/packer/start/git.nvim",
+    url = "https://github.com/dinhhuy258/git.nvim"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/home/jhersy/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
+  ["incline.nvim"] = {
+    loaded = true,
+    path = "/home/jhersy/.local/share/nvim/site/pack/packer/start/incline.nvim",
+    url = "https://github.com/b0o/incline.nvim"
   },
   ["lazygit.nvim"] = {
     loaded = true,
@@ -153,6 +163,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jhersy/.local/share/nvim/site/pack/packer/start/neosolarized.nvim",
     url = "https://github.com/svrana/neosolarized.nvim"
+  },
+  ["nightfox.nvim"] = {
+    loaded = true,
+    path = "/home/jhersy/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
+    url = "https://github.com/EdenEast/nightfox.nvim"
   },
   ["null-ls.nvim"] = {
     loaded = true,
@@ -234,10 +249,10 @@ _G.packer_plugins = {
     path = "/home/jhersy/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
   },
-  ["vim-fugitive"] = {
+  ["vim-floaterm"] = {
     loaded = true,
-    path = "/home/jhersy/.local/share/nvim/site/pack/packer/start/vim-fugitive",
-    url = "https://github.com/tpope/vim-fugitive"
+    path = "/home/jhersy/.local/share/nvim/site/pack/packer/start/vim-floaterm",
+    url = "https://github.com/voldikss/vim-floaterm"
   },
   ["vim-visual-multi"] = {
     loaded = true,
