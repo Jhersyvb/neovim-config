@@ -14,7 +14,7 @@ packer.startup(function(use)
   }
   use {
     'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
   use "b0o/incline.nvim"
   use 'nvim-lua/plenary.nvim' -- Common utilities
@@ -34,7 +34,7 @@ packer.startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
   }
-  use 'kyazdani42/nvim-web-devicons' -- File icons
+  use 'nvim-tree/nvim-web-devicons'
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-file-browser.nvim'
   use 'windwp/nvim-autopairs'
@@ -45,7 +45,7 @@ packer.startup(function(use)
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
   })
-  use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'kyazdani42/nvim-web-devicons' }
+  use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
   -- use 'github/copilot.vim'
 
   -- use 'tpope/vim-fugitive'
@@ -60,6 +60,7 @@ packer.startup(function(use)
   use 'folke/tokyonight.nvim'
   use "EdenEast/nightfox.nvim" -- Packer
   use "rebelot/kanagawa.nvim"
+  use "neanias/everforest-nvim"
 
   use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
 

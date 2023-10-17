@@ -27,13 +27,15 @@ vim.opt.shell = 'zsh'
 vim.opt.showcmd = true
 vim.opt.cmdheight = 1
 vim.opt.scrolloff = 4
-vim.opt.laststatus = 2
 vim.opt.inccommand = 'split'
 vim.opt.smarttab = true
 vim.opt.breakindent = true
 vim.opt.backspace = { 'start', 'eol', 'indent' }
 vim.opt.path:append { '**' } -- Finding files - Search down into subfolders
 vim.opt.wildignore:append { '*/node_modules/*' }
+vim.opt.list = true
+vim.opt.listchars = "tab:\\ ,trail:-"
+vim.opt.laststatus = 2
 
 -- Undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
