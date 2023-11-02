@@ -11,7 +11,10 @@ ts.setup {
     disable = {},
   },
   ensure_installed = {
+    "markdown",
+    "markdown_inline",
     "tsx",
+    "typescript",
     "toml",
     "fish",
     "php",
@@ -26,7 +29,7 @@ ts.setup {
     enable = true,
   },
   context_commentstring = {
-    enable = true,
+    enable         = true,
     enable_autocmd = false,
   }
 }

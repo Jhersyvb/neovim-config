@@ -103,7 +103,7 @@ nvim_lsp.sourcekit.setup {
   capabilities = capabilities,
 }
 
-nvim_lsp.sumneko_lua.setup {
+nvim_lsp.lua_ls.setup {
   flags = lsp_flags,
   capabilities = capabilities,
   on_attach = function(client, bufnr)
