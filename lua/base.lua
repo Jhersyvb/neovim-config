@@ -2,7 +2,7 @@ vim.cmd("autocmd!")
 
 vim.cmd([[let g:python3_host_prog='/usr/bin/python3']])
 vim.g.mapleader = " "
-vim.cmd([[set mouse=a]])
+-- vim.cmd([[set mouse=a]])
 
 vim.scriptencoding = 'utf-8'
 vim.opt.encoding = 'utf-8'
@@ -38,21 +38,21 @@ vim.opt.listchars = "tab:\\ ,trail:-"
 vim.opt.laststatus = 2
 
 -- Undercurl
-vim.cmd([[let &t_Cs = "\e[4:3m"]])
-vim.cmd([[let &t_Ce = "\e[4:0m"]])
+-- vim.cmd([[let &t_Cs = "\e[4:3m"]])
+-- vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
 -- Turn off paste mode when leaving insert
-vim.api.nvim_create_autocmd("InsertLeave", {
-  pattern = '*',
-  command = "set nopaste"
-})
+-- vim.api.nvim_create_autocmd("InsertLeave", {
+--   pattern = '*',
+--   command = "set nopaste"
+-- })
 
 -- Add asterisks in block comments
 vim.opt.formatoptions:append { 'r' }
 
 -- https://github.com/mvllow/modes.nvim/issues/10#issuecomment-1072978755                                                                1
 -- https://github.com/neovim/neovim/issues/12011#issuecomment-598716614
-vim.api.nvim_create_autocmd("VimLeave", {
-  pattern = '*',
-  command = "set guicursor=a:ver25-blinkon1"
-})
+-- vim.api.nvim_create_autocmd("VimLeave", {
+--   pattern = '*',
+--   command = "set guicursor=a:ver25-blinkon1"
+-- })

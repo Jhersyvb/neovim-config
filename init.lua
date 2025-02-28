@@ -2,7 +2,6 @@ require('base')
 require('highlights')
 require('maps')
 require('plugins')
-require('neovide')
 
 local has = function(x)
   return vim.fn.has(x) == 1
@@ -15,4 +14,7 @@ if is_mac then
 end
 if is_win then
   require('windows')
+end
+if vim.fn.has("wsl") == 1 then
+  require('wsl')
 end

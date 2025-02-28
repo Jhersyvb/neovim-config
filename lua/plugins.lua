@@ -31,9 +31,6 @@ packer.startup(function(use)
   use({
     'nvimdev/lspsaga.nvim',
     after = 'nvim-lspconfig',
-    config = function()
-      require('lspsaga').setup({})
-    end,
   })
 
   use 'L3MON4D3/LuaSnip'

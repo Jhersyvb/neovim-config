@@ -1,6 +1,7 @@
 local status, telescope = pcall(require, "telescope")
 if (not status) then return end
 local actions = require('telescope.actions')
+local action_state = require("telescope.actions.state")
 local builtin = require("telescope.builtin")
 
 local function telescope_buffer_dir()
@@ -9,11 +10,29 @@ end
 
 local fb_actions = require "telescope".extensions.file_browser.actions
 
+-- Function to open a file in a given split mode
+local function open_in_split(prompt_bufnr, split_cmd)
+  local selected_entry = action_state.get_selected_entry()
+  local filename = selected_entry.path or selected_entry[1]
+  actions.close(prompt_bufnr)
+  vim.cmd(split_cmd .. " " .. filename)
+end
+
 telescope.setup {
   defaults = {
     mappings = {
+      i = {
+        ["<C-v>"] = function(prompt_bufnr) open_in_split(prompt_bufnr, "belowright vsplit") end,
+        ["<C-b>"] = function(prompt_bufnr) open_in_split(prompt_bufnr, "botright vsplit") end,
+        ["<C-x>"] = function(prompt_bufnr) open_in_split(prompt_bufnr, "belowright split") end,
+        ["<C-z>"] = function(prompt_bufnr) open_in_split(prompt_bufnr, "botright split") end,
+      },
       n = {
-        ["q"] = actions.close
+        ["q"] = actions.close,
+        ["<C-v>"] = function(prompt_bufnr) open_in_split(prompt_bufnr, "belowright vsplit") end,
+        ["<C-b>"] = function(prompt_bufnr) open_in_split(prompt_bufnr, "botright vsplit") end,
+        ["<C-x>"] = function(prompt_bufnr) open_in_split(prompt_bufnr, "belowright split") end,
+        ["<C-z>"] = function(prompt_bufnr) open_in_split(prompt_bufnr, "botright split") end,
       },
     },
   },
@@ -46,7 +65,8 @@ vim.keymap.set('n', '<leader>ff',
   function()
     builtin.find_files({
       no_ignore = false,
-      hidden = true
+      hidden = true,
+      find_command = { "rg", "--files", "--sort", "path" },
     })
   end)
 vim.keymap.set('n', '<leader>fg', function()
