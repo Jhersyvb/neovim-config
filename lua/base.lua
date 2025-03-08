@@ -56,3 +56,24 @@ vim.opt.formatoptions:append { 'r' }
 --   pattern = '*',
 --   command = "set guicursor=a:ver25-blinkon1"
 -- })
+
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  pattern = "*",
+  callback = function()
+    vim.b.saved_view = vim.fn.winsaveview()
+  end
+})
+
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+  pattern = "*",
+  callback = function()
+    if vim.b.saved_view then
+      vim.fn.winrestview(vim.b.saved_view)
+    end
+  end
+})
+
+vim.api.nvim_create_autocmd("VimResized", {
+  pattern = "*",
+  command = "wincmd =",
+})

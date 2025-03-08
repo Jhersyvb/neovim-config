@@ -26,7 +26,7 @@ keymap.set("n", "<Leader>D", '"_D')
 keymap.set("v", "<Leader>d", '"_d')
 keymap.set("v", "<Leader>D", '"_D')
 
--- Increment/decrement
+-- Increment/decrement numbers
 keymap.set("n", "+", "<C-a>")
 keymap.set("n", "-", "<C-x>")
 
@@ -38,6 +38,8 @@ keymap.set("n", "-", "<C-x>")
 keymap.set("n", "<Leader>a", "ggVG<c-$>", { desc = "Select All" })
 
 keymap.set("n", "<Delete>", "<cmd>:w<CR>", { desc = "Save file" })
+
+keymap.set("n", "<Leader>q", "<cmd>:q<CR>", { desc = "Quit file" })
 
 keymap.set("n", "<esc>", function()
   close_floating()
@@ -60,8 +62,8 @@ keymap.set("n", "<tab>", ":tabnext<Return>", opts)
 keymap.set("n", "<s-tab>", ":tabprev<Return>", opts)
 
 -- Split window
-keymap.set("n", "ss", ":split<Return>", opts)
-keymap.set("n", "sv", ":vsplit<Return>", opts)
+keymap.set("n", "ss", ":belowright split<Return>", opts)
+keymap.set("n", "sv", ":belowright vsplit<Return>", opts)
 
 -- Navigate between windows
 keymap.set("n", "sh", "<C-w>h")
