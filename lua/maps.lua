@@ -66,10 +66,10 @@ keymap.set("n", "ss", ":belowright split<Return>", opts)
 keymap.set("n", "sv", ":belowright vsplit<Return>", opts)
 
 -- Navigate between windows
-keymap.set("n", "sh", "<C-w>h")
-keymap.set("n", "sk", "<C-w>k")
-keymap.set("n", "sj", "<C-w>j")
-keymap.set("n", "sl", "<C-w>l")
+keymap.set("n", "<Leader>h", "<C-w>h")
+keymap.set("n", "<Leader>k", "<C-w>k")
+keymap.set("n", "<Leader>j", "<C-w>j")
+keymap.set("n", "<Leader>l", "<C-w>l")
 
 -- Easier window switching with leader + Number
 -- Creates mappings like this: km.set("n", "<Leader>2", "2<C-W>w", { desc = "Move to Window 2" })
@@ -80,11 +80,6 @@ for i = 1, 6 do
 end
 
 -- Move window
-keymap.set("n", "sH", "<C-w>H")
-keymap.set("n", "sK", "<C-w>K")
-keymap.set("n", "sJ", "<C-w>J")
-keymap.set("n", "sL", "<C-w>L")
-
 keymap.set("n", "<Leader>J", "<C-W>J", { silent = true, desc = "Window Down" })
 keymap.set("n", "<Leader>K", "<C-W>K", { silent = true, desc = "Window Up" })
 keymap.set("n", "<Leader>L", "<C-W>L", { silent = true, desc = "Window Right" })
