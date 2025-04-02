@@ -74,4 +74,5 @@ packer.startup(function(use)
   use 'mg979/vim-visual-multi'
   use 'voldikss/vim-floaterm'
   use 'iloginow/vim-stylus'
+  use 'rcarriga/nvim-notify'
 end)

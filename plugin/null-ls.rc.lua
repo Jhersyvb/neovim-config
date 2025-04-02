@@ -5,6 +5,7 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 local lsp_formatting = function(bufnr)
   vim.lsp.buf.format({
+    async = true,
     filter = function(client)
       return client.name == "null-ls"
     end,
@@ -41,4 +42,3 @@ vim.api.nvim_create_user_command(
   end,
   { nargs = 0 }
 )
-

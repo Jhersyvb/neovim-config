@@ -36,6 +36,7 @@ vim.opt.wildignore:append { '*/node_modules/*' }
 vim.opt.list = true
 vim.opt.listchars = "tab:\\ ,trail:-"
 vim.opt.laststatus = 2
+vim.notify = require("notify")
 
 -- Undercurl
 -- vim.cmd([[let &t_Cs = "\e[4:3m"]])
@@ -50,14 +51,32 @@ vim.opt.laststatus = 2
 -- Add asterisks in block comments
 vim.opt.formatoptions:append { 'r' }
 
--- https://github.com/mvllow/modes.nvim/issues/10#issuecomment-1072978755                                                                1
+-- https://github.com/mvllow/modes.nvim/issues/10#issuecomment-1072978755
 -- https://github.com/neovim/neovim/issues/12011#issuecomment-598716614
 -- vim.api.nvim_create_autocmd("VimLeave", {
 --   pattern = '*',
 --   command = "set guicursor=a:ver25-blinkon1"
 -- })
 
+-- Better Solution: Auto-adjust Split Ratios when the terminal window is resized
 vim.api.nvim_create_autocmd("VimResized", {
   pattern = "*",
   command = "wincmd =",
+})
+
+-- Prevent scroll on save
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  pattern = "*",
+  callback = function()
+    vim.b.saved_view = vim.fn.winsaveview()
+  end
+})
+
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+  pattern = "*",
+  callback = function()
+    if vim.b.saved_view then
+      vim.fn.winrestview(vim.b.saved_view)
+    end
+  end
 })

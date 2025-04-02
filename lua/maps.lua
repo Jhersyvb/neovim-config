@@ -40,6 +40,8 @@ keymap.set("n", "<Leader>a", "ggVG<c-$>", { desc = "Select All" })
 keymap.set("n", "<Delete>", "<cmd>:w<CR>", { desc = "Save file" })
 
 keymap.set("n", "<Leader>q", "<cmd>:q<CR>", { desc = "Quit file" })
+keymap.set("n", "<Leader>qa", "<cmd>:qa<CR>", { desc = "Quit all" })
+keymap.set("n", "<Leader>qt", "<cmd>:tabclose<CR>", { desc = "Tab close" })
 
 keymap.set("n", "<esc>", function()
   close_floating()
